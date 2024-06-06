@@ -30,7 +30,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build and deploy site to local dir
-        run: mvn -B verify site:deploy -DskipTests -Dspotbugs.skip=true
+        run: mvn -B verify site:site site:deploy -DskipTests -Dspotbugs.skip=true
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
